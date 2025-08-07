@@ -1,0 +1,36 @@
+/*
+ * 主人專屬 Discord 背景主題（雲端圖片＋柔光黑紗）
+ * 請將下方網址換成自己的 raw.githubusercontent.com 圖片連結
+ */
+
+body,
+.theme-dark,
+.theme-light,
+.appMount-2yBXZl {
+    background-image: url("https://raw.githubusercontent.com/IheHairu0302/Discord/main/mydarkbg.png");
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    /* 若想背景更暗可以加 background-color: rgba(0,0,0,0.3); */
+}
+
+/* 柔光黑紗（全螢幕半透明漸層遮罩） */
+body::after,
+.theme-dark::after,
+.theme-light::after,
+.appMount-2yBXZl::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 9999;
+    /* 中央較亮，四周微暗，柔化文字閱讀 */
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.42) 100%);
+    /* 可自行調整透明度，0.15/0.42 越大越暗 */
+}
+
+/* 若想主題內容也更柔和，可加透明背景 */
+.theme-dark,
+.theme-light {
+    background-color: rgba(30, 30, 30, 0.25) !important;
+}
